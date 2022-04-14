@@ -2,8 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>searchBox</title>
   <style>
+
+    @font-face {
+      font-family: "iconfont"; /* Project id 3330331 */
+      src: url('//at.alicdn.com/t/font_3330331_jus8chmvmo.woff2?t=1649951921481') format('woff2'),
+      url('//at.alicdn.com/t/font_3330331_jus8chmvmo.woff?t=1649951921481') format('woff'),
+      url('//at.alicdn.com/t/font_3330331_jus8chmvmo.ttf?t=1649951921481') format('truetype');
+    }
+
+    .iconfont {
+      font-family: "iconfont" !important;
+      font-size: 18px;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .icon-search:before {
+      content: "\e6ac";
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -11,6 +32,7 @@
     }
 
     body {
+      background-color: skyblue;
       font-family: sans-serif;
       display: flex;
       align-items: center;
@@ -20,9 +42,10 @@
     }
 
     .container {
-      border: 1px solid red;
+      /*border: 1px solid red;*/
       position: relative;
       height: 50px;
+
     }
 
     .container .search {
@@ -32,7 +55,8 @@
       padding: 15px;
       height: 50px;
       width: 50px;
-      transition: width 0.5s ease-out;
+      transition: width 0.5s ease;
+      border-radius: 10px;
     }
 
     .btn {
@@ -45,7 +69,8 @@
       left: 0;
       height: 50px;
       width: 50px;
-      transition: transform 0.3s ease;
+      transition: transform 0.5s ease;
+      border-radius: 10px ;
     }
 
     .btn:focus,
@@ -58,15 +83,15 @@
     }
 
     .container.active .btn {
-      transform: translateX(198px);
+      transform: translateX(183px);
     }
   </style>
 </head>
 <body>
 <div class="container">
-  <input type="text" class="search" placeholder="请输入关键词">
+  <input type="text" class="search" placeholder="输入关键词搜索">
   <button class="btn">
-    <span class="li li-search"></span>
+    <i class="iconfont icon-search"></i>
   </button>
 </div>
 <script>
